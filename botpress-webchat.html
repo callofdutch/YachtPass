@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webchat</title>
+  <style>
+    .bpFab {
+      display: none;
+    }
+
+    .bpWebchat {
+      width: 95% !important;
+      height: 100% !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Botpress Webchat Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script>
+    window.botpressWebChat.init({
+      botId: 'your-bot-id', // Replace with your Botpress bot ID
+      hostUrl: 'https://cdn.botpress.cloud/webchat/v2.2',
+      messagingUrl: 'https://files.bpcontent.cloud/2024/10/07/15/20241007153802-O50Q7D58.js', // Replace with your actual messaging URL
+      open: true // Automatically open the chat
+    });
+
+    // Open the chat when ready
+    window.botpressWebChat.on("webchat:ready", (error) => {
+      if (!error) {
+        window.botpressWebChat.open();
+      }
+    });
+  </script>
+</body>
+</html>
